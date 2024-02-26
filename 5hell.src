@@ -38,7 +38,7 @@ command = {} // default
 //
 /////////// IMPRT LINE /////////
 //////////// change the below line to the path where you placed 5hell.5pk //////
-import_code("/root/src/5hell.5pk")
+#include "5hell.5pk.src"
 ///////////// END IMPRT LINE /////////
 // once built you may use the 'makfit' command to
 // build with a smaller filesize. see makfit -h

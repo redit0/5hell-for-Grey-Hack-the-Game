@@ -1980,7 +1980,9 @@ command.db = function(arg1, arg2, arg3=0, arg4=0)//////////////////BEGIN DATABAS
 						return "db: target has non-standard gateway."+char(10)+"db: try again with gateway ip"
 					end if
 				end if
-				if DEBUG then if ports.len > 0 then print "debug: port[0]: "+ports[0].port_number else print "debug: no ports found"
+				if DEBUG then
+					if ports.len > 0 then print "debug: port[0]: "+ports[0].port_number else print "debug: no ports found"
+				end if
 				//locals.ports.push(0) // add the gateway port 0
 				//command.db(arg1, arg2, 0)
 				for port in locals.ports

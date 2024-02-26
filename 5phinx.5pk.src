@@ -481,7 +481,7 @@ secure_copy = function(shl,copy_to=0,trajectory=-1,skip_perms=0)
         if failed then return "scp: failed" else return "scp complete: "+payload.path + " " + payload.size + " " + payload.permissions+char(10)+"-- copied to: "+copy_to+"/"+payload.name
       else
         if typeof(globals.shell) == "ftpshell" then print(shell.put(copy_from, copy_to, shl)) else return "aborting..." ///// copying
-        "scp complete: "+payload.path + " " + payload.size + " " + payload.permissions+char(10)+"-- copied to: "+copy_to+"/"+payload.name
+        print("scp complete: "+payload.path + " " + payload.size + " " + payload.permissions+char(10)+"-- copied to: "+copy_to+"/"+payload.name)
       end if
     end if
   end if
