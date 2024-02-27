@@ -1,5 +1,5 @@
-homeIp = "$ip"
-homePass = "$pass"
+homeIp = #envar ip
+homePass = #envar pass
 
 rental = [homeIp, 22, "root", homePass, "ssh", "/root/pass"]
 
