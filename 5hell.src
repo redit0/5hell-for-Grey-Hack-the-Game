@@ -39,6 +39,7 @@ command = {} // default
 /////////// IMPRT LINE /////////
 //////////// change the below line to the path where you placed 5hell.5pk //////
 #include "5hell.5pk.src"
+import_code("./5hell.redit0")
 ///////////// END IMPRT LINE /////////
 // once built you may use the 'makfit' command to
 // build with a smaller filesize. see makfit -h
@@ -57,7 +58,7 @@ command = {} // default
 //-- skipping this configuration means you can't use the transmit command. up to you.
 //// important: don't comment it out, just leave at default values if you aren't going to use it.
 // edit the below line to include the credentials for your (ssh) hashim server. the transmit command will use this information to connect.
-globals.HOME_SERVER = ["ip", 22, "root", "password", "ssh or ftp", "/path/to/pass (default: /root/pass)"] // port should be int, not string!
+globals.HOME_SERVER = rental
 //////// an ftp server can be more secure than a ssh server when running a hashim -d server ///////
 /////// ALWAYS USE A PASSWORD / ACCESS CODE (see the SECURITY SECTION BELLOW command.shell) WHEN USING HOME_SERVER!!!!! ////////////////////////////////
 ////// END @HOME CONFIGURATION//////////////////////////////////////////////////
@@ -73,7 +74,7 @@ command.shell = function(input=null)
     pipe = []  // pipe control, do not edit
     prompt = [] // prompt control, do not edit
     next = [] // pipe control, do not edit
-    bang = "|> " // YOUR PROMPT, edit to your liking /// updated to include get_name /////////////////////////////// THEME CONFIG TARGET
+    bang = cPrompt
     if full_prompt then bang = globals.checkUser(shell)+"@"+globals.localmachine.get_name+":"+globals.currentPath+"|> " // stock FULLPROMPT, edit to your liking
     if globals.GLASSPOOL then bang = colorLightBlue+bang.trim+CT+" " // GLASSPOOL PROMPT, edit to your liking
     if input then prompt = input.split(" ") else prompt = user_input(bang).split(" ")
@@ -216,18 +217,18 @@ end function
 //////////////////END IMPRTS SECTION ////////////////////////////
 //
 //
-//////////////////////////////////// SECURITY GOES HERE //////////////////////
-///// customize this line fully for the most security ////////
-access_codes = {"Alpha":"your access code here", "Beta":"your other access code here"}//////////////////////////////////////////////////////////////
-// if you rename access_codes be sure to edit the below line
-rnac = access_codes.indexes
-rnac.shuffle
-rnac = rnac.pop
-if user_input(colorCyan+"Cyberdeck Authentication Code ["+colorWhite+rnac+colorCyan+"]: "+CT,1,0) != access_codes[rnac] then
-  wait(300)
-  exit("frag off, chumba")
-end if
-/////////////////END SECURITY///////////////////
+// //////////////////////////////////// SECURITY GOES HERE //////////////////////
+// ///// customize this line fully for the most security ////////
+// access_codes = {"Alpha":"your access code here", "Beta":"your other access code here"}//////////////////////////////////////////////////////////////
+// // if you rename access_codes be sure to edit the below line
+// rnac = access_codes.indexes
+// rnac.shuffle
+// rnac = rnac.pop
+// if user_input(colorCyan+"Cyberdeck Authentication Code ["+colorWhite+rnac+colorCyan+"]: "+CT,1,0) != access_codes[rnac] then
+//   wait(300)
+//   exit("frag off, chumba")
+// end if
+// /////////////////END SECURITY///////////////////
 //
 //
 //
