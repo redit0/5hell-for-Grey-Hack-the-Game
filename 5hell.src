@@ -207,8 +207,7 @@ end function
 //    return 0  // or return soemthing
 // end function
 //
-
-/////////////////////////////////////////////////////////////////////////////////////////////
+//
 // or
 //
 // imp*cde ( "/path/your.5pk")   // where your.5pk contains your function in the above format
