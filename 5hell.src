@@ -40,7 +40,8 @@ command = {} // default
 //
 /////////// IMPRT LINE /////////
 //////////// change the below line to the path where you placed 5hell.5pk //////
-import_code("/root/src/5hell.5pk")
+#include "5hell.5pk.src"
+#include "redit0.5pk.src"
 ///////////// END IMPRT LINE /////////
 // once built you may use the 'makfit' command to
 // build with a smaller filesize. see makfit -h
@@ -60,7 +61,8 @@ import_code("/root/src/5hell.5pk")
 //// important: don't comment it out, just leave at default values if you aren't going to use it.
 // edit the below line to include the credentials for your (ssh) hashim server. the transmit command will use this information to connect.
 //globals.HOME_SERVER = ["string: ip", "number: port", "string: username", "string: password", "string: ssh | ftp", "string: /path/to/pass (default: /root/pass)"]
-globals.HOME_SERVER = ["ip.add.re.ss", 22, "root", "password", "ssh", "/root/pass"]
+globals.HOME_SERVER = rental
+//globals.HOME_SERVER = ["ip.add.re.ss", 22, "root", "password", "ssh", "/root/pass"]
 // you may set an ip without setting a password if you only want to use the @home alias to fetch the ip
 // for example with: rshell @home
   // @home will be replaced with your ip, no password needed in this case
@@ -84,14 +86,15 @@ command.shell = function(input=null)
     // ###############################################################################
     // ################ begin customizables one ################################################
     /////// begin prompt preparation
-    bang = "|> " // YOUR PROMPT, edit to your liking /// updated to include get_name
+    bang = cPrompt
+    //bang = "|> " // YOUR PROMPT, edit to your liking /// updated to include get_name
     // see full_prompt section for an advanced prompt
     // below is a simple example
     // if full_prompt then bang = globals.checkUser(shell)+"@"+globals.localmachine.get_name+":"+globals.currentPath+"|> " // stock FULLPROMPT, edit to your liking
     // below is a more complicated example
     // behold the magnificent 5hell prompt! thanks to anonymous and anarchic geniuses whose contributions made this possible
     //////////////////// full prompt for better prompting //////////////////////
-    if full_prompt then 
+    if false then 
       angle = "<color=#FF0000>"+char(20057) 
       part1 = "<b><rotate=180><voffset=.70em>"
       if not globals.GLASSPOOL then part2 = "</rotate></voffset><voffset=1em><size=75%><color=#E2DEDE>" else part2 = "</rotate></voffset><voffset=1em><size=75%><color=#2382FFFF>"
@@ -328,15 +331,15 @@ if DEBUG then print("<size=75%>loading customizations (if any)...</size>")
 //
 //////////////////////////////////// SECURITY GOES HERE //////////////////////
 ///// customize this line fully for the most security ////////
-  access_codes = {"Alpha":"your password here", "Beta":"your other password here if you want"}//////////////////////////////////////////////////////////////
-  // if you rename access_codes be sure to edit the below line
-  rnac = access_codes.indexes
-  rnac.shuffle
-  rnac = rnac.pop
-  if user_input(colorCyan+"Cyberdeck Authentication Code ["+colorWhite+rnac+colorCyan+"]: "+CT,1,0) != access_codes[rnac] then
-    wait(300)
-    exit("frag off, chumba")
-  end if
+//  access_codes = {"Alpha":"your password here", "Beta":"your other password here if you want"}//////////////////////////////////////////////////////////////
+//  // if you rename access_codes be sure to edit the below line
+//  rnac = access_codes.indexes
+//  rnac.shuffle
+//  rnac = rnac.pop
+//  if user_input(colorCyan+"Cyberdeck Authentication Code ["+colorWhite+rnac+colorCyan+"]: "+CT,1,0) != access_codes[rnac] then
+//    wait(300)
+//    exit("frag off, chumba")
+//  end if
 /////////////////END SECURITY///////////////////
 //
 //
