@@ -10,13 +10,13 @@ env:
   # replace "github_username" with your GitHub username
   # replace "github.com/username/repo.git" with your GitHub repo path
   # do NOT replace ${{secrets.GITHUB_TOKEN}}, GitHub will take care of it
-  MY_REPO: https://redit0:${{secrets.GITHUB_TOKEN}}@github.com:redit0/5hell-for-Grey-Hack-the-Game.git
+  MY_REPO: https://redit0:${{secrets.GITHUB_TOKEN}}@github.com/redit0/5hell-for-Grey-Hack-the-Game.git
 
   # replace "long-lived_branch_name" with your branch name
   MY_BRANCH: redit0
 
   # replace it with the path to master repo
-  MASTER_REPO: https://github.com:redit0/5hell-for-Grey-Hack-the-Game.git
+  MASTER_REPO: https://github.com/redit0/5hell-for-Grey-Hack-the-Game.git
 
   # replace "master" with your master branch name
   MASTER_BRANCH: main
