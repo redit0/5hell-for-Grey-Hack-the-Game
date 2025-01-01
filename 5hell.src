@@ -93,7 +93,7 @@ command.shell = function(input=null,mute=null)
     // below is a more complicated example
     // behold the magnificent 5hell prompt! thanks to anonymous and anarchic geniuses whose contributions made this possible
     //////////////////// full prompt for better prompting //////////////////////
-    if false then 
+    if full_prompt then 
       angle = "<color=#FF0000>"+char(20057) 
       part1 = "<b><rotate=180><voffset=.70em>"
       if not globals.GLASSPOOL then part2 = "</rotate></voffset><voffset=1em><size=75%><color=#E2DEDE>" else part2 = "</rotate></voffset><voffset=1em><size=75%><color=#2382FFFF>"
