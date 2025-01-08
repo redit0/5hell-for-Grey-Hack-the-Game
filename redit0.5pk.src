@@ -1,44 +1,44 @@
 homeIp = #envar ip
 homePass = #envar pass
 
-rental = [homeIp, 22, "root", homePass, "ssh", "/root/pass"]
-
-pGreen = function(str)
-	return "<color=#007700><b>"+str+"</b></color>"
-end function
-pYellow = function(str)
-	return "<color=#dbd700><b>"+str+"</b></color>"
-end function
-pRed = function(str)
-	return "<color=#c30000><b>"+str+"</b></color>"
-end function
-pCyan = function(str)
-	return "<color=#0cddf2><b>"+str+"</b></color>"
-end function
-pOrange = function(str)
-	return "<color=#ffa500><b>"+str+"</b></color>"
-end function
-pGray = function(str)
-	return "<color=#b3b3b3><b>"+str+"</b></color>"
-end function
-pWhite = function(str)
-	return "<color=#eeeeee><b>"+str+"</b></color>"
-end function
+rental = [homeIp, 22, "root", homePass, "ssh", "/root/pass", "/root/rkit/database.csv"]
 
 cPrompt = function()
+	green = function(str)
+		return "<color=#007700><b>"+str+"</b></color>"
+	end function
+	yellow = function(str)
+		return "<color=#dbd700><b>"+str+"</b></color>"
+	end function
+	red = function(str)
+		return "<color=#c30000><b>"+str+"</b></color>"
+	end function
+	cyan = function(str)
+		return "<color=#0cddf2><b>"+str+"</b></color>"
+	end function
+	orange = function(str)
+		return "<color=#ffa500><b>"+str+"</b></color>"
+	end function
+	gray = function(str)
+		return "<color=#666666><b>"+str+"</b></color>"
+	end function
+	white = function(str)
+		return "<color=#eeeeee><b>"+str+"</b></color>"
+	end function
+
 	pun = globals.checkUser(shell)
 
-	pUser = "[" + pYellow(pun) + "@" + pWhite(globals.localmachine.get_name) + "]"
+	pUser = "[" + yellow(pun) + "@" + white(globals.localmachine.get_name) + "]"
 	
 	if pun == "root" then
-		pUser = "[" + pGreen(pun) + "@" + pWhite(globals.localmachine.get_name) + "]"
+		pUser = "[" + green(pun) + "@" + white(globals.localmachine.get_name) + "]"
 	end if
 	
 	if pun == "guest" then
-		pUser = "[" + pRed(pun) + "@" + pWhite(globals.localmachine.get_name) + "]"
+		pUser = "[" + red(pun) + "@" + white(globals.localmachine.get_name) + "]"
 	end if
 
-	pip = "[" + pCyan(globals.localmachine.public_ip) + ":" + pWhite(globals.localmachine.local_ip) + "] "
+	pip = "[" + cyan(globals.localmachine.public_ip) + ":" + white(globals.localmachine.local_ip) + "] "
 
-	return pOrange(pip + pUser + ":" + pWhite(globals.currentPath) + " " + char(187) + " ")
+	return orange(pip + pUser + ":" + white(globals.currentPath) + " " + char(187) + " ")
 end function

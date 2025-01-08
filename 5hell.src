@@ -75,7 +75,7 @@ globals.HOME_SERVER = rental
 command.shell = function(input=null,mute=null)
   //print // an extra line before the prompt, if you want
   running = true
-  full_prompt = 1
+  full_prompt = 0
   while running
     print // an extra line before the prompt, if you want
     pipe = []  // pipe control, do not edit
